@@ -6,7 +6,7 @@ metadata:
   region: us-west-2
 
 nodeGroups:
-  - name: ng-1
+  - name: ng-rafa-eks
     instanceType: m5.large
     desiredCapacity: 2  
     minSize: 2
