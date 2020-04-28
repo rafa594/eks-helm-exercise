@@ -10,8 +10,5 @@ nodeGroups:
     instanceType: m5.large
     desiredCapacity: 2  
     minSize: 2
-    maxSize: 2
-    iam:
-        withAddonPolicies:
-          externalDNS: true        
+    maxSize: 2            
   
