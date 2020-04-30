@@ -14,15 +14,15 @@ spec:
       labels:
         app: nginx
     spec:
-      #volumes:
-      #- name: persistent-storage
-      #  persistentVolumeClaim:
-      #    claimName: efs-claim
+      volumes:
+        - name: persistent-storage
+          persistentVolumeClaim:
+            claimName: efs-claim
       containers:
       - name: nginx
-      #  volumeMounts:
-      #    - name: persistent-storage
-      #      mountPath: /usr/share/nginx/html
+        volumeMounts:
+          - name: persistent-storage
+            mountPath: /usr/share/nginx/html
         image: nginx:alpine
         ports:
         - containerPort: 80      
