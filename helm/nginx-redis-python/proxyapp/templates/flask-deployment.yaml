@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-deployment
+  labels:
+    app: flask
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      containers:
+      - name: flask
+        image: rafa594/flaskapp:v1
+        env:
+        - name: FLASK_RUN_HOST
+          value: '0.0.0.0'
+        - name: FLASK_APP
+          value: 'app.py'
+        - name: REDIS_HOST
+          value: redis-cluster-ip-service
+        - name: REDIS_PORT
+          value: '6379'
+        
+        ports:
+        - containerPort: 5000
