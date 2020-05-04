@@ -4,4 +4,4 @@ This repository contains the configuration files to deploy an containerized appl
 The application consist in two webpages. First one is a Static Webpage, that shows a simple informative page. The second one is a Flask webpage consuming a Redis database. Both are running through Kubernetes deployments and services managed by a Helm release.
 
 Project diagram:
-![EKS Helm Deployment](/images/logo.png)
+![EKS Helm Deployment](/images/initial.png)
