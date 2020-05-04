@@ -3,10 +3,12 @@ This repository contains the configuration files to deploy an containerized appl
 
 The application consist in two webpages. First one is a Static Webpage, that shows a simple informative page. The second one is a Flask webpage consuming a Redis database. Both are running through Kubernetes deployments and services managed by a Helm release.
 
-## Project diagram:
+# Project diagram:
 ![EKS Helm Deployment](/images/initial.png)
 
-## Process
+# Process
+
+## AWS EKS
 
 First of all, create an AWS EKS cluster using eksctl tool.
 Go to `eksctl` folder and run the next command:
@@ -39,6 +41,7 @@ To do this you need to create an AWS EFS resource manually, create a Security Gr
 
 In the following updates, a Terraform template will be developed to automate this process.
 
+## Helm
 
 Next, install the Helm custom chart. 
 Go to `helm` folder and run the next command:
