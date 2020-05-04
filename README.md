@@ -42,8 +42,7 @@ This command must show the DNS of the Load Balancer configured in the Ingress fi
 
 To view the containers in the project, take the previous DNS and add the `static/` or `web/` subdirectory:
 
-`
+
 http://your.aws.loadbalancer.dns/web/
 
 http://your.aws.loadbalancer.dns/static/
-`
