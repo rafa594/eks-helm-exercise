@@ -5,3 +5,19 @@ The application consist in two webpages. First one is a Static Webpage, that sho
 
 ## Project diagram:
 ![EKS Helm Deployment](/images/initial.png)
+
+## Process
+
+First of all, create an AWS EKS cluster using eksctl tool.
+Go to `eksctl` folder and run the next command:
+
+`   
+eksctl create cluster --config-file=eksctl/cluster.yaml
+`
+
+Next, install the Helm custom chart. 
+Go to `helm` folder and run the next command:
+
+`
+helm install eks-helm proxyapp/
+`
