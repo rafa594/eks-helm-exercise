@@ -15,9 +15,36 @@ Go to `eksctl` folder and run the next command:
 eksctl create cluster --config-file=eksctl/cluster.yaml
 `
 
+Wait for 5-10 minutes to configure the cluster. Check the configuration with the next command:
+
+`
+kubectl get sc
+`
+
+This commands show the storage classes and the provisioner of each one.
+Must appear an AWS related provisioner.
+
+
 Next, install the Helm custom chart. 
 Go to `helm` folder and run the next command:
 
 `
 helm install eks-helm proxyapp/
+`
+
+To check the correct installation, look for the ingress objects in the cluster:
+
+`
+kubectl get ingress
+`
+
+This command must show the DNS of the Load Balancer configured in the Ingress file to reach the application.
+
+To view the containers in the project, take the previous DNS and add the `static/` or `web/` subdirectory:
+
+`
+http://your_aws_loadbalancer_dns/web/
+
+http://your_aws_loadbalancer_dns/static/
+
 `
